@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="pictures/icon.png">
+    <title>CheckedHouse Kraków - profesjonalne odbiory mieszkań od deweloperów</title>
+    <meta name="description" content="CheckedHouse Kraków to firma specjalizująca się w profesjonalnych odbiorach mieszkań od deweloperów">
+    <meta name="robots" content="all">
+    <meta name="googlebot" content="all">
+
+    <style type="text/css">
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100px;
+            height: 100px;
+            margin: -76px 0 0 -76px;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            background-image: url("pictures/spiner.png");
+            animation: spin 1.8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            35% { transform: rotate(180deg); }
+            80% { transform: rotate(1080deg); }
+            100% { transform: rotate(180deg); }
+        }
+       
+       #leftContact {
+            float: left;
+            margin-right: 20px;
+       }
+
+       fieldset {
+            width: 800px;
+       }
+
+       .alert {
+            visibility: hidden;
+            color: red;
+            font-size: 10px;
+       }
+
+       fieldset, legend {
+            background: #00A4E8;
+            border: 0;   
+            padding: 12px;
+            font-size: 16px;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 12px;
+       }
+
+       legend {
+            align-items: center;
+            text-align: center;
+            border: 2px solid black;
+            font-size: 20px;
+       }
+
+       fieldset {
+            display: flex;
+            margin: 0 auto;
+       }
+
+       #legend {
+            text-align: center;
+       }
+
+       input, textarea {
+            margin-top: 5px;
+            margin-bottom: 3px;
+            border: 2px solid black;
+            outline: none;
+            font-size: 13px;
+            padding: 5px;
+       }
+
+       #leftContact, #rightContact {
+            padding: 15px;
+            padding-top: 8px;
+       }
+
+       .alert {
+            font-size: 12px;
+            padding-top: 0;
+            padding-bottom: 3px;
+       }
+       
+       #contactForm, form  {
+            margin: 15px auto 15px auto;
+       }
+
+       #submitButton {
+            width: 534px;
+            margin: 0 auto;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: white;
+            border: 2px solid black;
+       }
+
+       #bottomBaner {
+            background: #00A4E8;
+            padding: 0;
+            margin: 10px auto 0 auto;
+            font-size: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            width: 70%;
+       }
+
+       .bottombar {
+            display: inline;
+            margin: 10px auto 0 auto;
+       }
+
+       #logo {
+            height: 50px;
+            margin: 0 auto 0 auto;
+       }
+
+       #centerAlign {
+            display: block;
+            background: #00A4E8;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            min-width: 950px;
+       }
+
+       #topDiv {
+            object-fit: cover;
+            float: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            height: 120px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+            overflow: hidden;
+       }
+
+       #topLogo {
+            min-width: 930px;
+            width: 100%;
+            margin: 0;
+            height: 150px;
+            float: left;
+            float: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+       }
+
+       #logoMessage {
+            width: 80px;
+            position: fixed;
+            bottom: 70px;
+            right: 120px;
+            border-radius: 12px;
+       }
+      
+       .menu, #menuDiv {
+            padding-top: 0;
+            margin-top: 0;
+            align-items: center;
+       }
+
+       #menuDiv {
+            min-width: 930px;
+            width: 100%;
+            background: #00A4E8;
+            text-align: center;
+            object-fit: none;  
+            margin-bottom: 10px;
+            max-height: 40px;
+            position: fixed;
+            z-index: 2;
+            top: 120px;
+            border-bottom: 1px black solid;
+            border-top: 1px black solid;
+       }
+
+       .menu {
+            display: inline-block;
+            padding: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            border: 0;
+            margin: 0;
+            width: 155px;
+            background: #00A4E8;
+            transition-duration: 0.6s;
+       }
+
+       .menu:hover {
+            background-color: white;
+            color: #00A4E8;
+       }
+       
+       .flag {
+            display: inline;
+            width: 30px;
+            height: 14px;
+            margin: 0;
+            margin-right: 5px;
+       }
+
+       .languageButton {
+            width: 100px;
+       }
+
+       .formDiv {
+            margin: 15px;
+            min-width: 930px;
+       }
+
+       .blackBorder {
+            border: black 2px solid;
+            background: white;
+            display: block;
+       }
+
+       .b {
+            font-weight: 900;
+            font-size: 20px;
+            display: inline;
+            color: red;
+       }
+
+       p {
+            margin: 5px 25px 5px 25px;
+            line-height: 1.5;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        #underlay {
+            height: 155px;
+            top: 0;
+            margin: 0;
+            z-index: 1;
+        }
+
+        button:hover, a:hover {
+            cursor: pointer;
+        }
+
+        .inviting {
+            margin-top: 5px;
+        }
+
+        ul {
+            list-style-type: "\1F5F8";
+            margin: 0;
+        }
+
+    </style>
+
+  </head>
+
+  <body onload="myFunction()" style="margin: 0;">
+
+    <!-- Div for loader to first screen -->
+    <div class="loader" id="loader"></div>
+
+    <!-- Div to hold whole content of webiste -->
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+
+        <!-- Div to make space under logo -->
+        <div id="underlay"></div>
+    
+        <!-- Logo -->
+        <div id="topDiv">
+            <img src="pictures/logo7.jpg" id="topLogo" alt="logo">
+        </div>
+
+        <!-- Menu -->
+        <div id="menuDiv">
+            <button onclick="functionRangeofServices()" id="rangeOfServiceButton" class="menu leftButton">Zakres usług</button>
+            <button onclick="functionAboutMe()" id="aboutMeButton" class="menu">O mnie</button>
+            <button onclick="functionPrices()" id="pricesButton" class="menu">Cennik usług</button>
+            <button onclick="functionContactForm()" id="contactButton" class="menu">Kontakt</button>
+            <button id="pl" class="menu languageButton" onclick="location.href='index.html'">
+                <img src="pictures/poland.png" class="flag">PL
+            </button>
+            <button id="eng" class="menu languageButton" onclick="location.href='indexeng.html'">
+                <img src="pictures/uk.png" class="flag">ENG
+            </button>
+        </div>
+
+        <!-- Message icon on the right side of website -->
+        <a onclick="functionContactForm()">
+            <img scr src="pictures/messageBlue.png" id="logoMessage" alt="icon of message">
+        </a>
+
+        <div id="main">
+
+            <!-- Div with range of service -->
+            <div id="rangeOfService"  class="formDiv">
+                <form>
+                    <fieldset class="blackBorder">
+
+                        <legend><div id="legend">Zakres usług</div></legend>
+                        <p>Wiem, że zakup własnego mieszkania to nie zakup skarpetek, a najważniejsza decyzja w Twoim życiu, gdy już się jednak na niego zdecydujesz przyjdzie czas na jego odbiór od dewelopera.</p>
+                        <p>Jest to moment niezwykle ważny dla nowego właściciela gdyż wielu deweloperów stosuje zasadę, że jeśli nie wskazano wady na odbiorze mieszkania to tej wady nie ma. Również wiele się słyszy o różnej jakości prac i wadach, dlatego też tak ważne jest szczegółowe sprawdzenie całego mieszkania.</p> 
+                        <p>Właśnie w tym kluczowym momencie chciałbym Ci pomóc. 
+                        Oferuję pełne sprawdzenie mieszkania pod względem technicznym jak i wizualnym. </p>
+                        <p>W zakres oferty wchodzi sprawdzenie całego mieszkania oraz miejsc postojowych / komórek lokatorskich należących do tego mieszkaniu. </p>
+                        <p>W mieszkaniu sprawdzę wszystkie jego elementy, między innymi: </p>
+                        <ul>
+                            <li> tynki</li>
+                            <li> wylewki</li>
+                            <li> okna, a przede wszystkim szyby</li>
+                            <li> drzwi wejściowe</li>
+                            <li> grzejniki</li>
+                            <li> parapety</li>
+                            <li> balkon: płytki, elewację, balustrady</li>
+                            <li> instalacje zgodnie z projektem</li>
+                        </ul>
+                        <p>Na życzenie sprawdzę również powierzchnię mieszkania.</p>
+                        <p>W razie pytań udzielę Ci wyczerpujących odpowiedzi.</p>
+                        <p>Wszystkie sprawdzenia dokonuję profesjonalnym sprzętem w oparciu o obowiązujące normy.</p>
+                        <p>Przed odbiorem chciałbym się przygotować, więc proszę prześlij mi na adres mailowy projekt mieszkania i prospekt informujący o standardzie wykończenia. </p>
+                        <p>Poproś dewelopera aby przed odbiorem umył szyby, bym mógł wychwycić wszystkie ich wady. </p>
+                        <p>Twoje zadowolenie jest moim zadowoleniem...</p>
+                        <p class="inviting">Zapraszam do kontaktu!</p>
+
+                    </fieldset>
+                </form>               
+            </div>
+
+        <!-- Div with section about Me -->    
+        <div id="aboutMe"  class="formDiv">
+            <form>
+                <fieldset  class="blackBorder">
+                    <legend><div id="legend">O mnie</div></legend>
+                    <p>Jestem absolwentem Politechniki Krakowskiej na kierunku Budownictwo. Posiadam uprawnienia do kierowania robotami budowlanymi w specjalności konstrukcyjno - budowlanej bez ograniczeń. </p>
+                    <p>Od wielu lat pracuję na budowie budując budynki wielorodzinne. Wybudowałem i przekazałem klientom z powodzeniem już setki mieszkań.</p>
+                    <p>Wieloletnia praktyka pozwala mi oferować Ci pomoc przy odbiorze mieszkań.</p>                  
+                </fieldset>
+            </form>            
+        </div>
+
+        <!-- Div with section about price list -->
+        <div id="prices" class="formDiv">
+            <form> 
+                <fieldset  class="blackBorder">
+                    <legend><div id="legend">Cennik usług</div></legend>
+                    <p>Poniższe ceny obejmują pełne sprawdzenie pod względem technicznym oraz wizualnym mieszkania i przynależnych miejsc postojowych / garaży, komórek / boksów lokatorskich. <br>Ceny uzależnione są od powierzchni mieszkania oraz czy mieszkanie znajduję się na terenie Krakowa czy poza.</p>
+                    <p>Mieszkanie o powierzchni do 35 m<sup>2</sup>: <span class="b">350,00zł</span></p>
+                    <p>Mieszkanie o powierzchni powyżej 35 m<sup>2</sup> do 45 m<sup>2</sup>: <span class="b">400,00zł</span></p>
+                    <p>Mieszkanie o powierzchni powyżej 55 m<sup>2</sup> do 65 m<sup>2</sup>: <span class="b">450,00zł</span></p>
+                    <p>Mieszkanie o powierzchni powyżej 65 m<sup>2</sup>: <span class="b">500,00zł</span></p>
+                    <p><span class="b">Gratis sprawdzenie miejsca postojowego i komórki lokatorskiej!</span></p>
+                    <p>Dojazd poza wycena indywidualna.</p>
+                </fieldset>
+            </form>
+        </div>
+
+        <!-- Div with section to contact by message -->
+        <div id="contactForm" class="formDiv">
+            <form action="https://formsubmit.co/kontakt@checkedhouse.com.pl" method="POST">
+                <fieldset id="contactFieldset">
+                    <legend><div id="legend">Kontakt</div></legend>
+                    <div id="leftContact">
+
+                        <label>Temat: <br>
+                            <input type="text" name="topic" id="topic" maxlength="40" size="40" placeholder="Temat" value=""><br> 
+                            <div class="alert" id="topicAlert">Musisz uzupełnić temat!</div>
+                        </label>
+                        
+                        <label>Imię i nazwisko: <br>
+                            <input type="text" name="fullName" id="fullName" maxlength="40" size="40" placeholder="Imię i nazwisko"><br>
+                            <div class="alert" id="fullNameAlert">Musisz uzupełnić imię i nazwisko!</div>
+                        </label>
+
+                        <label>Adres mieszkania do odbioru: <br>
+                            <input type="text" name="address" id="address" maxlength="40" size="40" placeholder="Adres mieszkania do odbioru"><br>
+                            <div class="alert" id="addressAlert">Proszę uzupełnić adres mieszkania</div>
+                        </label>
+
+                        <label>Powierzchnia: <br>
+                            <input type="text" name="area" id="area" maxlength="10" size="30" placeholder="Powierzchnia np. 12,34"> m<sup>2</sup><br> 
+                            <div class="alert" id="areaAlert">Proszę uzupełnić powierzchnię mieszkania</div>
+                        </label>
+
+                        <label>Numer telefonu: <br>
+                            <input type="text" name="prefix" id="prefix" maxlength="4" size="4" placeholder="+48">
+                            <input type="text" name="telefonNumber" id="telefonNumber" maxlength="9" size="9" placeholder="123456789"><br>
+                            <div class="alert" id="telefonAlert">Proszę uzupełnić poprawnie numer telefonu</div>
+                        </label>
+
+                        <label>Adres mailowy: <br>
+                            <input type="email" name="email" id="email" maxlength="40" size="40" placeholder="Email Address"><br> 
+                            <div class="alert" id="mailAlert">Musisz uzupełnić poprawnie adres mailowy!</div>
+                        </label>
+
+                    </div>
+
+                    <div id="rightContact">
+
+                        <label>Data i godzina: <br>
+                            <input type="date" name="dayDate" id="dayDate" required>
+                            <input type="time" name="timeDate" id="timeDate" required><br>
+                        </label>
+
+                        <label>Wiadomość: <br>
+                            <textarea id="message" name="message" rows="10" cols="70" placeholder="Napisz wiadomość..."></textarea>
+                            <div class="alert" id="messageAlert">Proszę napisz wiadomość</div>
+                        </label><br>
+                    
+                        <button type="submit" value="Submit" disable="true" id="submitButton">Wyślij</button><br>
+                        
+                        <div class="alert" id="submitAlert">Proszę wypełnij poprawnie pola obowiązkowe: temat, imię i nazwisko, numer telefonu, adres mailowy, datę i godzinę</div>           
+
+                        <input type="hidden" name="_autoresponse" value="Twoja wiadomość dotarła do mnie pomyślnie. Odpowiem najszybciej jak to możliwe. Dziękuję za kontakt">  
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Div with bottom banner -->
+    <div id="centerAlign">
+        <div id="bottomBaner">
+            <div class="bottombar">Copyright ©</div>
+            <img src="pictures/logosawit.png" id="logo">
+            <div class="bottombar">+48 888 160 108 </div>
+            <div class="bottombar"> kontakt@checkedhouse.com.pl</div>
+        </div>
+    </div>
+  
+    </div>
+
+    <script>
+        var myVar;
+
+        /* set how long loader have to be displayed */
+        function myFunction() {
+            myVar = setTimeout(showPage, 2000);
+        }
+
+        /* function to display loader and next content of page */
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+            messagePosition();
+        }
+
+        
+        document.getElementById("submitButton").disabled = true;
+        let arrCheckForm = [0, 0, 1, 1, 0, 0, 0, 1];
+
+        function topicCheckBlur(e) {
+            let target = e.target;
+            let valueToCheck = target.value;
+            if (target.value == "") {
+                document.getElementById("topicAlert").style.visibility = "visible";
+                document.getElementById("topic").style.border = "2px solid red";
+                arrCheckForm[0] = 0;
+            } else {
+                arrCheckForm[0] = 1;
+            }
+        }
+
+        function topicCheckFocus(e) {
+            document.getElementById("topicAlert").style.visibility = "hidden";
+            document.getElementById("topic").style.border = "2px solid black";
+            arrCheckForm[0] = 0;
+        }
+
+        function fullNameCheckBlur(e) {
+            let target = e.target;
+            let valueToCheck = target.value;
+            if (target.value == "") {
+                document.getElementById("fullNameAlert").style.visibility = "visible";
+                document.getElementById("fullName").style.border = "2px solid red";
+                arrCheckForm[1] = 0;
+            } else {
+                arrCheckForm[1] = 1;
+            }
+        }
+
+        function fullNameCheckFocus(e) {
+            document.getElementById("fullNameAlert").style.visibility = "hidden";
+            document.getElementById("fullName").style.border = "2px solid black";
+            arrCheckForm[1] = 0;
+        }
+
+        function addressCheckBlur(e) {
+            let target = e.target;
+            let valueToCheck = target.value;
+            if (target.value == "") {
+                document.getElementById("addressAlert").style.visibility = "visible";
+                document.getElementById("address").style.border = "2px solid red";
+            } 
+        }
+
+        function addressCheckFocus(e) {
+            document.getElementById("addressAlert").style.visibility = "hidden";
+            document.getElementById("address").style.border = "2px solid black";
+        }
+
+        function areaCheckBlur(e) {
+            let target = e.target;
+            let valueToCheck = target.value;
+            if (target.value == "") {
+                document.getElementById("areaAlert").style.visibility = "visible";
+                document.getElementById("area").style.border = "2px solid red";
+            } 
+        }
+
+        function areaCheckFocus(e) {
+            document.getElementById("areaAlert").style.visibility = "hidden";
+            document.getElementById("area").style.border = "2px solid black";
+        }
+
+        function telefonNumberCheckBlur() {
+            let valueToCheckTelefonNumber = document.getElementById("telefonNumber").value;
+            let regexpTelefon = /^[0-9]{9}$/;
+            if (!regexpTelefon.test(valueToCheckTelefonNumber)) {
+                document.getElementById("telefonAlert").style.visibility = "visible";
+                document.getElementById("telefonNumber").style.border = "2px solid red";
+                arrCheckForm[5] = 0;
+            } else {
+                arrCheckForm[5] = 1;
+            }
+
+            let valueToCheckPrefix = document.getElementById("prefix").value;
+            let regexpPrefix = /^\+?[0-9]{2,4}$/;
+            if (!regexpPrefix.test(valueToCheckPrefix)) {
+                document.getElementById("telefonAlert").style.visibility = "visible";
+                document.getElementById("prefix").style.border = "2px solid red";
+                arrCheckForm[4] = 0;
+            } else {
+                arrCheckForm[4] = 1;
+            }
+        }
+
+        function telefonNumberCheckFocus() {
+            document.getElementById("telefonAlert").style.visibility = "hidden";
+            document.getElementById("telefonNumber").style.border = "2px solid black";
+            document.getElementById("prefix").style.border = "2px solid black";
+            arrCheckForm[4] = 0;
+            arrCheckForm[5] = 0;
+        }
+
+        function mailCheckBlur() {
+            let valueToCheckMail = document.getElementById("email").value;
+            let regexpMail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+            if (!regexpMail.test(valueToCheckMail)) {
+                document.getElementById("mailAlert").style.visibility = "visible";
+                document.getElementById("email").style.border = "2px solid red";
+                arrCheckForm[6] = 0;
+            } else {
+                arrCheckForm[6] = 1;
+            }
+        }
+
+        function mailCheckFocus() {
+            document.getElementById("mailAlert").style.visibility = "hidden";
+            document.getElementById("email").style.border = "2px solid black";
+            arrCheckForm[6] = 0;
+        }
+
+        function messageCheckBlur(e) {
+            let target = e.target;
+            let valueToCheck = target.value;
+            if (target.value == "") {
+                document.getElementById("messageAlert").style.visibility = "visible";
+                document.getElementById("message").style.border = "2px solid red";
+            } 
+        }
+
+        function messageCheckFocus(e) {
+            document.getElementById("messageAlert").style.visibility = "hidden";
+            document.getElementById("message").style.border = "2px solid black";
+        }
+
+        let checkFormResult;
+        function checkfForm() {
+            checkFormResult = true;
+            for (let i = 0; i < arrCheckForm.length; i++) {
+                if (+arrCheckForm[i] == 0) {
+                    checkFormResult = false;
+                }
+            }
+            if (checkFormResult == true) {
+                document.getElementById("submitButton").disabled = false;
+                document.getElementById("submitAlert").style.visibility = "hidden";
+            } else {
+                document.getElementById("submitButton").disabled = true;
+                document.getElementById("submitAlert").style.visibility = "visible";
+            }
+
+        }
+
+        function messagePosition() {
+            let positionX = document.getElementById("contactFieldset").offsetLeft + document.getElementById("contactFieldset").offsetWidth;
+            document.getElementById("logoMessage").style.left = (positionX + 20) + "px";
+        }
+
+        function functionRangeofServices() {
+            let scrollHeight = document.getElementById("rangeOfService").offsetTop - 170;
+            document.body.scrollTop = scrollHeight;
+            document.documentElement.scrollTop = scrollHeight;
+        }
+
+        function functionRangeofServices() {
+            let scrollHeight = document.getElementById("rangeOfService").offsetTop - 165;
+            document.body.scrollTop = scrollHeight;
+            document.documentElement.scrollTop = scrollHeight;
+        }
+
+        function functionAboutMe() {
+            let scrollHeight = document.getElementById("aboutMe").offsetTop - 165;
+            document.body.scrollTop = scrollHeight;
+            document.documentElement.scrollTop = scrollHeight;
+        }
+
+        function functionPrices() {
+            let scrollHeight = document.getElementById("prices").offsetTop - 165;
+            document.body.scrollTop = scrollHeight;
+            document.documentElement.scrollTop = scrollHeight;
+        }
+
+        function functionContactForm() {
+            let scrollHeight = document.getElementById("contactForm").offsetTop - 165;
+            document.body.scrollTop = scrollHeight;
+            document.documentElement.scrollTop = scrollHeight;
+        }
+
+        window.addEventListener("resize", messagePosition);
+
+
+        topic.addEventListener("blur", topicCheckBlur);
+        topic.addEventListener("focus", topicCheckFocus);
+
+        fullName.addEventListener("blur", fullNameCheckBlur);
+        fullName.addEventListener("focus", fullNameCheckFocus);
+
+        address.addEventListener("blur", addressCheckBlur);
+        address.addEventListener("focus", addressCheckFocus);
+
+        area.addEventListener("blur", areaCheckBlur);
+        area.addEventListener("focus", areaCheckFocus);
+
+        prefix.addEventListener("blur", telefonNumberCheckBlur);
+        prefix.addEventListener("focus", telefonNumberCheckFocus);
+
+        telefonNumber.addEventListener("blur", telefonNumberCheckBlur);
+        telefonNumber.addEventListener("focus", telefonNumberCheckFocus);
+
+        email.addEventListener("blur", mailCheckBlur);
+        email.addEventListener("focus", mailCheckFocus);
+
+        message.addEventListener("blur", messageCheckBlur);
+        message.addEventListener("focus", messageCheckFocus);
+
+        contactForm.addEventListener("click", checkfForm);
+
+
+
+
+    </script>
+  </body>
+</html>
